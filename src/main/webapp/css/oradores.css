@@ -1,0 +1,212 @@
+#oradores {
+  width: 100%;
+  height: 100%;
+  color: var(--titles);
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  & .titulo {
+    margin-top: 10px;
+    > h3 {
+      font-size: 24px;
+      font-weight: 500;
+
+      & div {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+  }
+  & .cards {
+    display: grid;
+    justify-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 10px auto 60px auto;
+    width: calc(100% - 20%);
+
+    & .orador {
+      border: 1px solid #dddddd;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      max-width: 300px;
+      & img {
+        width: 300px;
+      }
+      & .etiquetas {
+        display: flex;
+        margin-left: 25px;
+        margin-top: 15px;
+
+        & :nth-child(1) {
+          background-color: #fec107;
+          text-align: center;
+          padding: 3px 7px;
+          font-size: 12px;
+          font-weight: 600;
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+
+        & :nth-child(2) {
+          background-color: #18a1b8;
+          color: var(--secondary-color);
+          text-align: center;
+          padding: 3px 7px;
+          font-size: 12px;
+          font-weight: 600;
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+      }
+
+      & .etiquetas2 {
+        display: flex;
+        margin-left: 25px;
+        margin-top: 15px;
+
+        & :nth-child(1) {
+          background-color: #6c757d;
+          text-align: center;
+          padding: 3px 7px;
+          font-size: 12px;
+          font-weight: 600;
+          border-radius: 5px;
+          margin-right: 10px;
+          color: var(--secondary-color);
+        }
+
+        & :nth-child(2) {
+          background-color: #db3545;
+          color: var(--secondary-color);
+          text-align: center;
+          padding: 3px 7px;
+          font-size: 12px;
+          font-weight: 600;
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+      }
+      & .text {
+        > h3 {
+          margin-left: 25px;
+          margin-top: 3px;
+          font-weight: 500;
+          font-size: 22px;
+        }
+
+        > p {
+          margin: 15px 20px 20px 25px;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 500px) {
+  #oradores {
+    width: 100%;
+    height: 100%;
+
+    & .cards {
+      display: grid;
+      justify-items: center;
+      column-gap: 20px;
+      row-gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      margin: 25px 0;
+      width: 100%;
+
+      & .orador {
+        border: 1px solid #dddddd;
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        max-width: 300px;
+        & img {
+          width: 300px;
+        }
+        & .etiquetas {
+          display: flex;
+          margin-left: 25px;
+          margin-top: 15px;
+
+          & :nth-child(1) {
+            background-color: #fec107;
+            text-align: center;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-right: 10px;
+          }
+
+          & :nth-child(2) {
+            background-color: #18a1b8;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-right: 10px;
+          }
+        }
+
+        & .etiquetas2 {
+          display: flex;
+          margin-left: 25px;
+          margin-top: 15px;
+
+          & :nth-child(1) {
+            background-color: #6c757d;
+            text-align: center;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-right: 10px;
+            color: var(--secondary-color);
+          }
+
+          & :nth-child(2) {
+            background-color: #db3545;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-right: 10px;
+          }
+        }
+        & .text {
+          > h3 {
+            margin-left: 25px;
+            margin-top: 3px;
+            font-weight: 500;
+            font-size: 22px;
+          }
+
+          > p {
+            margin: 15px 20px 20px 25px;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,385 @@
+/* Encabezado */
+header {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  position: relative;
+  background-color: var(--primary-color);
+
+  & .header__container {
+    position: relative;
+    background-color: var(--primary-color);
+    transition: all 0.6s ease-in-out;
+  }
+
+  & .header__fixed {
+    position: fixed;
+    background-color: #000836;
+    transition: all 0.6s ease-in-out;
+  }
+
+  & .header__container,
+  .header__fixed {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+
+    & .header__leftnav {
+      display: flex;
+      align-items: center;
+      justify-content: initial;
+      width: 100%;
+      max-width: 250px;
+      margin: 10px 50px;
+
+      > a {
+        > img {
+          width: 100%;
+          max-width: 120px;
+        }
+      }
+
+      & h2 {
+        font-size: 22px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    & .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: center;
+      width: 100%;
+      margin: 0px 50px;
+
+      & ul {
+        display: flex;
+        list-style: none;
+
+        > li {
+          margin: 0 10px;
+
+          &:last-child {
+            > a {
+              color: var(--tertiary-color);
+            }
+          }
+
+          > a {
+            text-decoration: none;
+            color: var(--nav-li);
+            font-size: 15px;
+            font-weight: 400;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: var(--secondary-color);
+            }
+          }
+        }
+      }
+    }
+
+    & .hamburguer {
+      display: none;
+    }
+  }
+
+  & #header__background {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+      url(../assets/img/header-background-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    & #conferencia {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      padding-top: calc(100% - 85%);
+      padding-right: 4%;
+      padding-left: 52%;
+      & .conferencias__info {
+        > h1 {
+          font-size: 36px;
+          font-weight: 500;
+          margin: 0;
+          padding: 0;
+        }
+
+        > p {
+          font-size: 16px;
+          font-weight: 400;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      & .section__button {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 20px;
+
+        > a {
+          text-decoration: none;
+          color: var(--secondary-color);
+          font-size: 16px;
+          font-weight: 400;
+          transition: all 0.3s ease-in-out;
+
+          &:first-child {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--secondary-color);
+          }
+
+          &:last-child {
+            padding: 10px 15px;
+            margin-left: 15px;
+            border-radius: 5px;
+            background-color: var(--tertiary-color);
+          }
+          &:hover {
+            background-color: var(--secondary-color);
+            color: var(--tertiary-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+
+@media (width <= 1024px) {
+  header {
+    & .header__container {
+      position: relative;
+      background-color: var(--primary-color);
+      transition: all 0.6s ease-in-out;
+    }
+
+    & .header__fixed {
+      position: fixed;
+      background-color: #000836;
+      transition: all 0.6s ease-in-out;
+    }
+    & .header__container,
+    .header__fixed {
+      & .nav {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 95px;
+        background-color: #000836;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+
+        & ul {
+          padding: 15px 20px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+        }
+      }
+
+      & .nav--open {
+        transform: translateX(0%);
+      }
+
+      & .hamburguer {
+        display: block;
+        cursor: pointer;
+
+        & .bar {
+          height: 2px;
+          width: 27px;
+          background: var(--secondary-color);
+          margin: 5px 0;
+          opacity: 0.8;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+      }
+
+      /* Estilo para la clase .x */
+      .x .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+      }
+
+      .x .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .x .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-10px);
+      }
+    }
+  }
+}
+
+@media (width <= 800px) {
+  header {
+    & #header__background {
+      & #conferencia {
+        padding-top: calc(100% - 75%);
+        padding-right: 8%;
+        padding-left: 8%;
+
+        & .conferencias__info {
+          > h1 {
+            font-size: 30px;
+            font-weight: 500;
+          }
+
+          > p {
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 500px) {
+  header {
+    & .header__container {
+      position: relative;
+      background-color: var(--primary-color);
+    }
+
+    & .header__fixed {
+      position: fixed;
+      background-color: #000836;
+    }
+    & .header__container,
+    .header__fixed {
+      & .header__leftnav {
+        margin: 10px 0 10px 8px;
+
+        > a {
+          > img {
+            width: 100%;
+            max-width: 90px;
+          }
+        }
+
+        & h2 {
+          font-size: 18px;
+          font-weight: 300;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      & .nav {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 78px;
+        background-color: #000836;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+
+        & ul {
+          padding: 15px 20px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+        }
+      }
+
+      & .nav--open {
+        transform: translateX(0%);
+      }
+
+      & .hamburguer {
+        display: block;
+        cursor: pointer;
+
+        & .bar {
+          height: 2px;
+          width: 27px;
+          background: var(--secondary-color);
+          margin: 5px 15px;
+          opacity: 0.8;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+      }
+    }
+
+    & #header__background {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+        url(../assets/img/header-background-1.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      & #conferencia {
+        padding-top: calc(100% - 25%);
+        padding-right: 8%;
+        padding-left: 8%;
+        & .conferencias__info {
+          > h1 {
+            font-size: 30px;
+            font-weight: 500;
+          }
+
+          > p {
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        & .section__button {
+          display: flex;
+          justify-content: flex-end;
+          padding-top: 20px;
+
+          > a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-size: 12px;
+            font-weight: 400;
+            transition: all 0.3s ease-in-out;
+
+            &:first-child {
+              padding: 10px 15px;
+              border-radius: 5px;
+              border: 1px solid var(--secondary-color);
+            }
+
+            &:last-child {
+              padding: 10px 15px;
+              margin-left: 15px;
+              border-radius: 5px;
+              background-color: var(--tertiary-color);
+            }
+            &:hover {
+              background-color: var(--secondary-color);
+              color: var(--tertiary-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
