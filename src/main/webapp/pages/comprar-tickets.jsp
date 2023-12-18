@@ -27,7 +27,10 @@
             <li>
               <a href="../index.jsp#formulario">Conviertete en orador</a>
             </li>
-            <li><a href="./comprar-tickets.html">Comprar tickets</a></li>
+            <li><a href="comprar-tickets.jsp">Comprar tickets</a></li>
+            <li>
+              <a href="login.jsp">Iniciar Sesión</a>
+            </li>
           </ul>
         </nav>
         <div class="hamburguer">

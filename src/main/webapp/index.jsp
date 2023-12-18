@@ -7,8 +7,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css" />
     <title>Conf Bs As</title>
+    <style>
+        .send-btn {
+            text-decoration: none;
+            background-color: var(--green-color);
+            color: var(--secondary-color);
+            font-size: 16px;
+            margin-top: 12px;
+            margin-bottom: 15px;
+            padding: 8px 0px;
+            font-weight: 300;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: var(--tertiary-color);
+                color: var(--secondary-color);
+            }
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="header.jsp" />
@@ -76,6 +96,10 @@
             </div>
         </div>
     </section>
+    <section class="container mb-4 text-center" id="restoOradores">
+        <a class="btn btn-outline-success" href="<%=request.getContextPath()%>/lista-oradores">Conoce al resto de los ORADORES</a>
+
+    </section>
     <section id="honolulu">
         <div class="honolulu__img"></div>
         <div class="honolulu__txt">
@@ -92,6 +116,7 @@
             <a href="#">Conocé más</a>
         </div>
     </section>
+
     <section id="formulario">
         <div class="formulario__titulo">
             <h3>
@@ -103,7 +128,7 @@
                 Cuéntanos de qué quieres hablar!
             </p>
         </div>
-        <div class="formulario__container">
+        <form class="formulario__container" action="<%=request.getContextPath()%>/CreateOradorController" method="POST">
             <div class="formulario__container__input">
                 <input
                         name="nombre"
@@ -122,8 +147,16 @@
                         placeholder="Apellido"
                 />
             </div>
+            <input
+                    name="mail"
+                    minlength="3"
+                    maxlength="30"
+                    type="email"
+                    required
+                    placeholder="Email"
+            />
             <textarea
-                    name="comentario"
+                    name="tema"
                     id=""
                     cols="30"
                     rows="10"
@@ -131,8 +164,8 @@
                     required
             ></textarea>
             <p>Recuerda incluir un título para tu charla</p>
-            <a href="#">Enviar</a>
-        </div>
+            <button type="submit" class="send-btn btn btn-lg btn-form">Enviar</button>
+        </form>
     </section>
 </main>
 <jsp:include page="footer.jsp" />

@@ -75,7 +75,7 @@
       margin-top: 7px;
     }
 
-    & a {
+    & .send-btn {
       text-decoration: none;
       background-color: var(--green-color);
       color: var(--secondary-color);
@@ -136,7 +136,7 @@
         border: 1px solid #dddddd;
       }
 
-      & a {
+      & .send-btn {
         width: 100%;
       }
     }

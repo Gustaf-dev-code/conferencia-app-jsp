@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <header>
     <div class="header__container">
         <div class="header__leftnav">
@@ -16,7 +17,7 @@
                 <li><a href="#honolulu">El lugar y la fecha</a></li>
                 <li><a href="#formulario">Conviertete en orador</a></li>
                 <li><a href="pages/comprar-tickets.jsp">Comprar tickets</a></li>
-                <li><a href="login.jsp">LogIn</a></li>
+                <li><a href="pages/login.jsp">Iniciar Sesión</a></li>
             </ul>
         </nav>
         <div class="hamburguer">
